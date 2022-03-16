@@ -1,4 +1,4 @@
-FROM nginx:%%VARIANT%%
+FROM nginx:alpine
 
 LABEL maintainer="Xolyu"
 
@@ -11,10 +11,10 @@ COPY conf/nginx/snippets/*          /etc/nginx/snippets/
 COPY conf/taiga/conf.json /taiga/
 
 # Build version
-ARG TAIGA_VERSION=%%VERSION%%
+ARG TAIGA_VERSION=6.2.2
 
 # Get Taiga
-ADD https://github.com/kaleidos-ventures/taiga-front-dist/archive/${TAIGA_VERSION}%%VERSION_SUFFIX%%.tar.gz /tmp/taiga-front-dist-${TAIGA_VERSION}%%VERSION_SUFFIX%%.tar.gz
+ADD https://github.com/kaleidos-ventures/taiga-front-dist/archive/${TAIGA_VERSION}.tar.gz /tmp/taiga-front-dist-${TAIGA_VERSION}.tar.gz
 
 # Install the packages we need
 # Install Taiga from tag archive
@@ -29,10 +29,10 @@ RUN set -ex; \
     ; \
     chmod 755 /entrypoint.sh; \
     mkdir -p /tmp/taiga-front-dist; \
-    tar xzf /tmp/taiga-front-dist-${TAIGA_VERSION}%%VERSION_SUFFIX%%.tar.gz -C /tmp/taiga-front-dist; \
-    rm /tmp/taiga-front-dist-${TAIGA_VERSION}%%VERSION_SUFFIX%%.tar.gz; \
+    tar xzf /tmp/taiga-front-dist-${TAIGA_VERSION}.tar.gz -C /tmp/taiga-front-dist; \
+    rm /tmp/taiga-front-dist-${TAIGA_VERSION}.tar.gz; \
     mkdir -p /usr/src/taiga-front-dist; \
-    cp -r /tmp/taiga-front-dist/taiga-front-dist-${TAIGA_VERSION}%%VERSION_SUFFIX%%/* /usr/src/taiga-front-dist; \
+    cp -r /tmp/taiga-front-dist/taiga-front-dist-${TAIGA_VERSION}/* /usr/src/taiga-front-dist; \
     rm -rf /tmp/taiga-front-dist; \
     ln -s /taiga/conf.json /usr/src/taiga-front-dist/dist/conf.json; \
     mkdir -p /usr/src/taiga-front-dist/dist/js/; \

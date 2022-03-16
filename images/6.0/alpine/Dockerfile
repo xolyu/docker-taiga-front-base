@@ -1,6 +1,6 @@
 FROM nginx:alpine
 
-LABEL maintainer="Monogramm maintainers <opensource at monogramm dot io>"
+LABEL maintainer="Xolyu"
 
 VOLUME /taiga
 
@@ -14,7 +14,7 @@ COPY conf/taiga/conf.json /taiga/
 ARG TAIGA_VERSION=6.0.10
 
 # Get Taiga
-ADD https://github.com/taigaio/taiga-front-dist/archive/${TAIGA_VERSION}.tar.gz /tmp/taiga-front-dist-${TAIGA_VERSION}.tar.gz
+ADD https://github.com/kaleidos-ventures/taiga-front-dist/archive/${TAIGA_VERSION}.tar.gz /tmp/taiga-front-dist-${TAIGA_VERSION}.tar.gz
 
 # Install the packages we need
 # Install Taiga from tag archive
