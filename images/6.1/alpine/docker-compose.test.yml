@@ -84,7 +84,7 @@ services:
 
   taiga_back:
     # For production
-    image: monogramm/docker-taiga-back-base:6.1-alpine
+    image: xolyu/docker-taiga-back-base:6.1-alpine
     hostname: ${TAIGA_HOSTNAME}
     container_name: taiga_back
     #restart: always
@@ -184,7 +184,7 @@ services:
   # To enable async mode, uncomment the following lines:
   taiga_celery:
     # For production
-    image: monogramm/docker-taiga-back-base:6.1-alpine
+    image: xolyu/docker-taiga-back-base:6.1-alpine
     hostname: ${TAIGA_HOSTNAME}
     container_name: taiga_celery
     #restart: always
@@ -278,7 +278,7 @@ services:
 
   # To disable taiga-events, comment all the following lines:
   taiga_events:
-    image: monogramm/docker-taiga-events:6.1-alpine
+    image: xolyu/docker-taiga-events:6.1-alpine
     container_name: taiga_events
     #restart: always
     depends_on:
