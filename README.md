@@ -1,17 +1,19 @@
 [![License: AGPL v3][uri_license_image]][uri_license]
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Monogramm/docker-taiga-front-base/Docker%20Image%20CI)](https://github.com/Monogramm/docker-taiga-front-base/actions)
-[![Docker Automated buid](https://img.shields.io/docker/cloud/build/monogramm/docker-taiga-front-base.svg)](https://hub.docker.com/r/monogramm/docker-taiga-front-base/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/monogramm/docker-taiga-front-base.svg)](https://hub.docker.com/r/monogramm/docker-taiga-front-base/)
-[![](https://images.microbadger.com/badges/version/monogramm/docker-taiga-front-base.svg)](https://microbadger.com/images/monogramm/docker-taiga-front-base)
-[![](https://images.microbadger.com/badges/image/monogramm/docker-taiga-front-base.svg)](https://microbadger.com/images/monogramm/docker-taiga-front-base)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/xolyu/docker-taiga-front-base/Docker%20Image%20CI)](https://github.com/xolyu/docker-taiga-front-base/actions)
+[![Docker Automated buid](https://img.shields.io/docker/cloud/build/xolyu/docker-taiga-front-base.svg)](https://hub.docker.com/r/xolyu/docker-taiga-front-base/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/xolyu/docker-taiga-front-base.svg)](https://hub.docker.com/r/xolyu/docker-taiga-front-base/)
+[![](https://images.microbadger.com/badges/version/xolyu/docker-taiga-front-base.svg)](https://microbadger.com/images/xolyu/docker-taiga-front-base)
+[![](https://images.microbadger.com/badges/image/xolyu/docker-taiga-front-base.svg)](https://microbadger.com/images/xolyu/docker-taiga-front-base)
 
 # Docker image for taiga-front
 
-This Docker repository provides the [taiga-front](https://github.com/taigaio/taiga-front) server with a configuration suitable to use with [taiga-back](https://github.com/taigaio/taiga-back).
+This Docker repository provides the [taiga-front](https://github.com/kaleidos-ventures/taiga-front) server with a configuration suitable to use with [taiga-back](https://github.com/kaleidos-ventures/taiga-back).
 
-This image was inspired by [ajira86/docker-taiga](https://github.com/ajira86/docker-taiga) which is a fork of [benhutchins/docker-taiga](https://github.com/benhutchins/docker-taiga).
+This image is a fork of [Monogramm/docker-taiga-front-base](https://github.com/Monogramm/docker-taiga-front-base) 
+which itself was inspired by [ajira86/docker-taiga](https://github.com/ajira86/docker-taiga) 
+which is a fork of [benhutchins/docker-taiga](https://github.com/benhutchins/docker-taiga).
 
-For a more advanced image and full docker-compose example, checkout [Monogramm/docker-taiga](https://github.com/Monogramm/docker-taiga).
+For a more advanced image and full docker-compose example, checkout [xolyu/docker-taiga](https://github.com/xolyu/docker-taiga).
 
 ## What is Taiga
 
@@ -21,7 +23,7 @@ Taiga is a project management platform for startups and agile developers & desig
 
 ## Supported tags
 
-<https://hub.docker.com/r/monogramm/docker-taiga-front-base/>
+<https://hub.docker.com/r/xolyu/docker-taiga-front-base/>
 
 <!-- >Docker Tags -->
 
@@ -48,7 +50,7 @@ If the image does not include the packages you need, you can easily build your o
 Start your derived image with the `FROM` statement and add whatever you like.
 
 ```Dockerfile
-FROM monogramm/docker-taiga-front-base:alpine
+FROM xolyu/docker-taiga-front-base:alpine
 
 RUN ...
 
@@ -74,7 +76,7 @@ Your Dockerfile(s) will be generated in the `images/` folder.
 
 The Taiga image supports auto configuration via environment variables. You can preconfigure nearly everything that is available in `conf.json`.
 
-See [conf.example.json](https://github.com/taigaio/taiga-front/blob/master/conf/conf.example.json) for more details on configuration.
+See [conf.example.json](https://github.com/kaleidos-ventures/taiga-front/blob/main/conf/conf.example.json) for more details on configuration.
 
 ### TAIGA_HOSTNAME
 
@@ -387,6 +389,8 @@ TAIGA_GRAVATAR=false
 TAIGA_GRAVATAR=true
 TAIGA_GRAVATAR=
 ```
+
+_This only works if the Taiga instance is accessible from the world._
 
 ### TAIGA_LOGIN_FORM_TYPE
 
