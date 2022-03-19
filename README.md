@@ -58,7 +58,7 @@ RUN ...
 
 You can also clone this repository and use the [update.sh](update.sh) shell script to generate a new Dockerfile based on your own needs.
 
-For instance, you could build a container based on Dolibarr develop branch by setting the `update.sh` versions like this:
+For instance, you could build a container based on develop branch by setting the `update.sh` versions like this:
 
 ```bash
 latests=( "master" )
@@ -67,7 +67,7 @@ latests=( "master" )
 Then simply call [update.sh](update.sh) script.
 
 ```console
-bash update.sh
+./update.sh
 ```
 
 Your Dockerfile(s) will be generated in the `images/` folder.
